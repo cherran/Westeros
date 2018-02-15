@@ -11,11 +11,23 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? // ventana de la app
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // Si hay backgroundColor en window, accede a ella, si no no hagas nada
+        // desempaqueta el opcional si existe tal propiedad, igual con los métodos
+        window?.backgroundColor = .cyan
+        window?.makeKeyAndVisible()
+        
+        // 'NSInternalInconsistencyException', reason: 'Application windows are expected to have a root view controller at the end of application launch'
+        let root = UIViewController()
+        window?.rootViewController = root
+        
         return true
     }
 
