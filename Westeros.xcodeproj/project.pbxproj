@@ -10,7 +10,7 @@
 		28D30CA1203645C1004F1F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CA0203645C1004F1F82 /* AppDelegate.swift */; };
 		28D30CA8203645C1004F1F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA7203645C1004F1F82 /* Assets.xcassets */; };
 		28D30CAB203645C1004F1F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA9203645C1004F1F82 /* LaunchScreen.storyboard */; };
-		28D30CB6203645C2004F1F82 /* WesterosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CB5203645C2004F1F82 /* WesterosTests.swift */; };
+		28D30CC120365178004F1F82 /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC020365178004F1F82 /* HouseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +30,8 @@
 		28D30CAA203645C1004F1F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28D30CAC203645C1004F1F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28D30CB1203645C2004F1F82 /* WesterosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WesterosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		28D30CB5203645C2004F1F82 /* WesterosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WesterosTests.swift; sourceTree = "<group>"; };
 		28D30CB7203645C2004F1F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D30CC020365178004F1F82 /* HouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +84,8 @@
 		28D30CB4203645C2004F1F82 /* WesterosTests */ = {
 			isa = PBXGroup;
 			children = (
-				28D30CB5203645C2004F1F82 /* WesterosTests.swift */,
 				28D30CB7203645C2004F1F82 /* Info.plist */,
+				28D30CC020365178004F1F82 /* HouseTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D30CB6203645C2004F1F82 /* WesterosTests.swift in Sources */,
+				28D30CC120365178004F1F82 /* HouseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

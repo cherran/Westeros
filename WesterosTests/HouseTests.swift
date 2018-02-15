@@ -1,15 +1,14 @@
 //
-//  WesterosTests.swift
+//  HouseTests.swift
 //  WesterosTests
 //
-//  Created by Carlos de la Herrán Martín on 15/2/18.
+//  Created by Carlos de la Herrán Martín on 16/2/18.
 //  Copyright © 2018 cherran. All rights reserved.
 //
 
 import XCTest
-@testable import Westeros
 
-class WesterosTests: XCTestCase {
+class HouseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
