@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Westeros
 
 class HouseTests: XCTestCase {
     
@@ -20,16 +21,18 @@ class HouseTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testHouseExistence() {
+        let starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo") // UIImage(): imagen vacía
+        let stark = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        XCTAssertNotNil(stark)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSigilExistence() {
+        let starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo") // UIImage(): imagen vacía
+        XCTAssertNotNil(starkSigil)
+        
+        let lannisterSigil = Sigil(image: UIImage(), description: "León Rampante") // UIImage(): imagen vacía
+        XCTAssertNotNil(lannisterSigil)
     }
     
 }
