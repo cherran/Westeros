@@ -12,8 +12,8 @@
 		28D30CAB203645C1004F1F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA9203645C1004F1F82 /* LaunchScreen.storyboard */; };
 		28D30CC120365178004F1F82 /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC020365178004F1F82 /* HouseTests.swift */; };
 		28D30CC32036532F004F1F82 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC22036532F004F1F82 /* House.swift */; };
-		28D30CC5203E0CBB004F1F82 /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC4203E0CBB004F1F82 /* CharacterTests.swift */; };
-		28D30CC8203E0D22004F1F82 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC7203E0D22004F1F82 /* Character.swift */; };
+		28D30CC5203E0CBB004F1F82 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC4203E0CBB004F1F82 /* PersonTests.swift */; };
+		28D30CC8203E0D22004F1F82 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CC7203E0D22004F1F82 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		28D30CB7203645C2004F1F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28D30CC020365178004F1F82 /* HouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTests.swift; sourceTree = "<group>"; };
 		28D30CC22036532F004F1F82 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		28D30CC4203E0CBB004F1F82 /* CharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
-		28D30CC7203E0D22004F1F82 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		28D30CC4203E0CBB004F1F82 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
+		28D30CC7203E0D22004F1F82 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			children = (
 				28D30CB7203645C2004F1F82 /* Info.plist */,
 				28D30CC020365178004F1F82 /* HouseTests.swift */,
-				28D30CC4203E0CBB004F1F82 /* CharacterTests.swift */,
+				28D30CC4203E0CBB004F1F82 /* PersonTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				28D30CC22036532F004F1F82 /* House.swift */,
-				28D30CC7203E0D22004F1F82 /* Character.swift */,
+				28D30CC7203E0D22004F1F82 /* Person.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D30CC8203E0D22004F1F82 /* Character.swift in Sources */,
+				28D30CC8203E0D22004F1F82 /* Person.swift in Sources */,
 				28D30CC32036532F004F1F82 /* House.swift in Sources */,
 				28D30CA1203645C1004F1F82 /* AppDelegate.swift in Sources */,
 			);
@@ -220,7 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D30CC120365178004F1F82 /* HouseTests.swift in Sources */,
-				28D30CC5203E0CBB004F1F82 /* CharacterTests.swift in Sources */,
+				28D30CC5203E0CBB004F1F82 /* PersonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
