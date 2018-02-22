@@ -9,7 +9,7 @@
 import UIKit
 
 typealias Words = String
-typealias Members = Set<Person>
+typealias Members = Set<Person> // Generic
 
 // MARK: - House
 final class House {
@@ -40,6 +40,23 @@ extension House {
     }
 }
 
+
+// MARK: - Proxy
+extension House {
+    var proxyForEquality: String {
+        return "\(name) \(words) \(count)"
+    }
+}
+
+
+// Mark: - Equatable
+extension House: Equatable {
+    static func ==(lhs: House, rhs: House) -> Bool {
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+    
+    
+}
 
 // MARK: - Sigil
 final class Sigil {
