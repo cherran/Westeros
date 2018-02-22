@@ -40,3 +40,36 @@ final class Person {
 //        self.init(name: name, alias: nil, house: house)
 //    }
 }
+
+extension Person {
+    var fullName: String {
+        return "\(name) \(house.name)"
+    }
+}
+
+// MARK: - Proxies
+extension Person {
+    var proxy: String {
+        return "\(name) \(alias) \(house.name)"
+    }
+}
+
+// MARK: - Hashable
+extension Person: Hashable {
+    var hashValue: Int {
+        return proxy.hashValue // proxy (Devuelve String que SI que tiene hashValue)
+    }
+}
+
+// MARK: - Equatable
+extension Person: Equatable {
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxy == rhs.proxy
+    }
+    
+    
+}
+
+
+
+

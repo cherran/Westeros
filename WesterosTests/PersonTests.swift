@@ -13,6 +13,8 @@ class PersonTests: XCTestCase {
     
     var starkHouse: House! // Variable opcional directamente desempaquetada
     var starkSigil: Sigil! // Esto hay que hacerlo con mucho cuidado
+    var ned: Person!
+    var arya: Person!
     // Necesitamos que sea opcional en la clase CharacterTests, ya que si los ponemos opcionales Swift nos obliga a que esta clase tenga un inicializador
     
     override func setUp() {
@@ -20,6 +22,8 @@ class PersonTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo")
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
+        arya = Person(name: "Arya", house: starkHouse)
     }
     
     override func tearDown() {
@@ -29,11 +33,12 @@ class PersonTests: XCTestCase {
     
     
     func testCharacterExistence() {
-        let ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
         XCTAssertNotNil(ned)
-        
-        let arya = Person(name: "Arya", house: starkHouse)
         XCTAssertNotNil(arya)
+    }
+    
+    func testFullName() {
+        XCTAssertEqual(ned.fullName, "Eddard Stark")
     }
     
 }
