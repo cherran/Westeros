@@ -24,13 +24,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .cyan
         window?.makeKeyAndVisible()
         
-        // 'NSInternalInconsistencyException', reason: 'Application windows are expected to have a root view controller at the end of application launch'
-        let root = UIViewController()
-        window?.rootViewController = root
+        
+        // Creamos los modelos
+        let starkSigil = Sigil(image: UIImage(named: "codeIsComing.png")!, description: "Lobo Huargo")
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        
+        let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "León rampante")
+        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido")
+        
+        
+        // Crear los controladores
+        let starkHouseViewController = HouseDetailViewController(model: starkHouse)
+        let lannisterHouseViewController = HouseDetailViewController(model: lannisterHouse)
+
+        
+        // Creamos los combinadores (UITabBarController)
+        let tabBarViewController = UITabBarController()
+        tabBarViewController.viewControllers = [
+            starkHouseViewController.wrappedInNavigation(),
+            lannisterHouseViewController.wrappedInNavigation()
+        ]
+        
+        
+        // Asignamos el rootVC
+        window?.rootViewController = tabBarViewController
         
         return true
     }
 
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
