@@ -11,9 +11,11 @@ import XCTest
 
 class RepositoryTests: XCTestCase {
     
+    var localHouses: [House]!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        localHouses = Repository.local.houses
     }
     
     override func tearDown() {
@@ -27,9 +29,17 @@ class RepositoryTests: XCTestCase {
     }
     
     func testLocalRepositoryHousesCreation() {
-        let houses = Repository.local.houses
-        XCTAssertNotNil(houses)
-        XCTAssertEqual(houses.count, 2)
+        XCTAssertNotNil(localHouses)
+        XCTAssertEqual(localHouses.count, 3)
+    }
+    
+    func testLocalRepositoryReturnsSortedArrayOfHouses() {
+        XCTAssertEqual(localHouses, localHouses.sorted())
+    }
+    
+    func testLocalRepositoryReturnsHouseByName() {
+        let stark = Repository.local.house(named: "sTarK")
+        XCTAssertEqual(stark?.name, "Stark")
     }
     
 }

@@ -25,25 +25,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         
-        // Creamos los modelos
-        let starkSigil = Sigil(image: UIImage(named: "codeIsComing.png")!, description: "Lobo Huargo")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
-        
-        let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "León rampante")
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido")
+        // Creamos el modelo
+        let houses = Repository.local.houses
         
         
-        // Crear los controladores
-        let starkHouseViewController = HouseDetailViewController(model: starkHouse)
-        let lannisterHouseViewController = HouseDetailViewController(model: lannisterHouse)
+        // Creamos los controladores
+//        let controllers = houses.map{ HouseDetailViewController(model: $0).wrappedInNavigation() }
+        
+//        let controllers = houses.map{ house in
+//            return HouseDetailViewController(house).wrappedInNavigation
+//        }
 
+//        var controllers = [UIViewController]() // Así cremos un array vacío
+//        for house in houses {
+//            controllers.append(HouseDetailViewController(model: house).wrappedInNavigation())
+//            // Podemos hacer esto aunque el array sea de UIViewControllers ya que UINavigationController es subclase de UIViewController
+//        }
+        
         
         // Creamos los combinadores (UITabBarController)
         let tabBarViewController = UITabBarController()
-        tabBarViewController.viewControllers = [
-            starkHouseViewController.wrappedInNavigation(),
-            lannisterHouseViewController.wrappedInNavigation()
-        ]
+        tabBarViewController.viewControllers = houses
+            .map{ HouseDetailViewController(model: $0) }
+            .map{ $0.wrappedInNavigation() }
         
         
         // Asignamos el rootVC
@@ -52,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
+    
     
     
     func applicationWillResignActive(_ application: UIApplication) {

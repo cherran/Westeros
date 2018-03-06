@@ -15,6 +15,7 @@ final class Repository {
 
 protocol HouseFactory {
     var houses: [House] { get }
+    func house(named: String) -> House?
 }
 
 
@@ -23,19 +24,34 @@ final class LocalFactory: HouseFactory {
         // Houses creation here
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Lobo Huargo") // UIImage(): imagen vacía
         let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "León Rampante") // UIImage(): imagen vacía
+        let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSmall.jpg"), description: "Dragón Tricéfalo")
         
         let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
         let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido")
+        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fuego y Sangre")
         
         let arya = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
         let robb = Person(name: "Arya", house: starkHouse)
         let tyrion = Person(name: "Tyrion", alias: "El Enano", house: lannisterHouse)
+        let cersei = Person(name: "Cersei", house: lannisterHouse)
+        let jaime = Person(name: "Jaime", alias: "El Matarreyes", house: lannisterHouse)
+        let dani = Person(name: "Daenerys", alias: "Madre de dragones", house: targaryenHouse)
+        
         
         // Add characters to houses
         starkHouse.add(person: arya)
         starkHouse.add(person: robb)
         lannisterHouse.add(person: tyrion)
+        lannisterHouse.add(person: cersei)
+        lannisterHouse.add(person: jaime)
+        targaryenHouse.add(person: dani)
         
-        return [starkHouse, lannisterHouse]
+        
+        return [starkHouse, lannisterHouse, targaryenHouse].sorted()
+    }
+    
+    func house(named name: String) -> House? {
+        let house = houses.filter{ $0.name.uppercased() == name.uppercased() }.first // .first --> el primero que cumpla estos parámetros
+        return house
     }
 }
