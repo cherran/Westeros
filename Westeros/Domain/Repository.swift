@@ -14,8 +14,10 @@ final class Repository {
 
 
 protocol HouseFactory {
+    typealias Filter = (House) -> Bool
     var houses: [House] { get }
     func house(named: String) -> House?
+    func houses(filteredBy: Filter) -> [House]
 }
 
 
@@ -26,9 +28,9 @@ final class LocalFactory: HouseFactory {
         let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "León Rampante") // UIImage(): imagen vacía
         let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSmall.jpg"), description: "Dragón Tricéfalo")
         
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido")
-        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fuego y Sangre")
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!)
+        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!)
+        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fuego y Sangre", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!)
         
         let arya = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
         let robb = Person(name: "Arya", house: starkHouse)
@@ -50,8 +52,31 @@ final class LocalFactory: HouseFactory {
         return [starkHouse, lannisterHouse, targaryenHouse].sorted()
     }
     
+    
     func house(named name: String) -> House? {
         let house = houses.filter{ $0.name.uppercased() == name.uppercased() }.first // .first --> el primero que cumpla estos parámetros
         return house
     }
+    
+    
+    func houses(filteredBy: Filter) -> [House] {
+        return houses.filter(filteredBy)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

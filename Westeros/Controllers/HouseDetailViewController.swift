@@ -18,7 +18,7 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var wordsLabel: UILabel!
     
     // Mark: - Properties
-    let model: House
+    var model: House
     
     // MARK: - Initialization
     init(model: House) {
@@ -40,6 +40,7 @@ class HouseDetailViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupUI()
         syncModelWithView()
     }
     
@@ -53,5 +54,50 @@ class HouseDetailViewController: UIViewController {
     }
     
     
+    // Mark: - UI
+    // crear una vista por código
+    func setupUI() {
+        let wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: #selector(displayWiki))
+        // #selector: Selector? () --> identificador del método
+        // target: clase en la que está el método
+        let members = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(displayMembers))
+        
+        navigationItem.rightBarButtonItems = [wikiButton, members]
+    }
+    
+    @objc func displayWiki() {
+        // Creamos el WikiVC
+        let wikiViewController = WikiViewController(model: model)
+        
+        // Hacemos el push
+        navigationController?.pushViewController(wikiViewController, animated: true)
+        
+    }
+    
+    @objc func displayMembers() {
+        // Creamos el VC
+        let memberListViewController = MemberListViewController(model: model.sortedMembers)
+        
+        // Hacemos Push
+        navigationController?.pushViewController(memberListViewController, animated: true)
+    }
 
 }
+
+extension HouseDetailViewController: HouseListTableViewControllerDelegate {
+    func houseListViewController(_ viewController: HouseListTableViewController, didSelectHouse house: House) {
+        self.model = house
+        // self.title = house.name
+        syncModelWithView()
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
