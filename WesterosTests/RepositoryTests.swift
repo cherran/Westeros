@@ -12,10 +12,12 @@ import XCTest
 class RepositoryTests: XCTestCase {
     
     var localHouses: [House]!
+    var localSeasons: [Season]!
     
     override func setUp() {
         super.setUp()
         localHouses = Repository.local.houses
+        localSeasons = Repository.local.seasons
     }
     
     override func tearDown() {
@@ -33,23 +35,32 @@ class RepositoryTests: XCTestCase {
         XCTAssertEqual(localHouses.count, 3)
     }
     
-    func testLocalRepositoryReturnsSortedArrayOfHouses() {
+    func testLocalRepositorySeasonsCreation() {
+        XCTAssertNotNil(localSeasons)
+        XCTAssertEqual(localSeasons.count, 7)
+    }
+    
+    func testLocalRepositoryReturnsHouseSortedArrayOfHouses() {
         XCTAssertEqual(localHouses, localHouses.sorted())
     }
     
+    func testLocalRepositoryReturnsSeasonSortedArrayOfHouses() {
+        XCTAssertEqual(localSeasons, localSeasons.sorted())
+    }
+    
     func testLocalRepositoryReturnsHouseByName() {
-        let stark = Repository.local.house(named: "sTarK")
-        XCTAssertEqual(stark?.name, "Stark")
+        let stark = Repository.local.season(named: "seASOn 1")
+        XCTAssertEqual(stark?.name, "Season 1")
         
-        let keepcoding = Repository.local.house(named: "keepcoding")
+        let keepcoding = Repository.local.season(named: "stark")
         XCTAssertNil(keepcoding)
     }
     
     func testHouseFiltering() {
-        let filtered = Repository.local.houses(filteredBy: { $0.count == 1 }) // Sintaxis de clausura
-        XCTAssertEqual(filtered.count, 1)
+        let filtered = Repository.local.seasons(filteredBy: { $0.count == 2 }) // Sintaxis de clausura
+        XCTAssertEqual(filtered.count, 7)
         
-        let otherFilter = Repository.local.houses(filteredBy: { $0.words.contains("invierno") })
+        let otherFilter = Repository.local.seasons(filteredBy: { $0.name.contains("7") })
         XCTAssertEqual(otherFilter.count, 1)
     }
     

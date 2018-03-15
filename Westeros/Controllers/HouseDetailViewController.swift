@@ -24,7 +24,7 @@ class HouseDetailViewController: UIViewController {
     init(model: House) {
         self.model = model
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
-        // Es lo mismo que hacer esto (a que tienen el mismo nombre):
+        // Es lo mismo que hacer esto (ya que tienen el mismo nombre):
         // super.init(nibName: "houseDetailViewController", bundle: Bundle(for: HouseDetailViewController.self))
         
         title = model.name

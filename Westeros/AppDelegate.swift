@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         
-        // Creamos el modelo
+        // Creamos los modelo
         let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
         
         
         // Creamos los controladores
@@ -67,7 +68,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         // Asignamos el rootVC
-        window?.rootViewController = splitViewController
+        //window?.rootViewController = splitViewController
+        
+        
+        
+        let seasonListViewController = SeasonListViewController(model: seasons)
+        let seasonDetailViewController = SeasonDetailViewController(model: seasons.first!)
+        
+        seasonListViewController.delegate = seasonDetailViewController
+        
+        window?.rootViewController = seasonListViewController.wrappedInNavigation()
+//        window?.rootViewController = seasonDetailViewController.wrappedInNavigation()
+        
         
         return true
     }
