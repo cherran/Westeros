@@ -8,16 +8,11 @@
 
 import UIKit
 
-// MARK: - SeasonListViewControllerDelegate
-protocol EpisodeListViewControllerDelegate: class {
-    func episodeListViewController(_ viewController: EpisodeListViewController, didSelectEpisode: Episode)
-}
-
 
 class EpisodeListViewController: UITableViewController {
     // Mark: - Properties
-    let model: [Episode]
-    weak var delegate: EpisodeListViewControllerDelegate?
+    var model: [Episode]
+
     
     // Mark: - Initialization
     init(model: [Episode]) {
@@ -31,22 +26,48 @@ class EpisodeListViewController: UITableViewController {
     }
     
     
-    // MARK: - Life Cycle
+    
+    // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupUI()
+        // Nos damos de alta en las notificaciones
+        let notificationCenter = NotificationCenter.default
+        
+        notificationCenter.addObserver(self, selector: #selector(seasonDidChange), name: NSNotification.Name(rawValue: SEASON_DID_CHANGE_NOTIFICATION_NAME), object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Nos damos de baja en las notificaciones
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+    }
     
     
     // MARK: - UI
-    func setupUI() {
-        let episodesButton = UIBarButtonItem(title: "<Episodes", style: .plain, target: self, action: #selector(goBack))
-        navigationItem.leftBarButtonItem = episodesButton
+    @objc func seasonDidChange(notification: Notification) {
+        // Extraer el userInfo de la notificación
+        guard let info = notification.userInfo else {
+            return
+        }
+        
+        // Sacar la casa del userInfo
+        let season = info[SEASON_KEY] as? Season
+        
+        // Actualizar el modelo de este controlador
+        model = season!.sortedMembers
+        
+        // Sincronizar la vista
+        syncModelWithView()
     }
     
-    @objc func goBack() {
-        navigationController?.popViewController(animated: true)
+    
+    
+    // MARK: - Sync
+    func syncModelWithView() {
+        // Recargar los datos de la UITableView
+        self.tableView.reloadData()
     }
     
     
@@ -77,6 +98,7 @@ class EpisodeListViewController: UITableViewController {
         
         // Texto detallado (fecha de emisión)
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         dateFormatter.dateFormat = "MMMM d, y"
         let date = dateFormatter.string(from: episode.airDate)
         cell?.detailTextLabel?.text = "First Aired: \(date)"
@@ -90,13 +112,10 @@ class EpisodeListViewController: UITableViewController {
         let episode = model[indexPath.row]
         
         // Creo la vista detallada
-        // let episodeDetailView = EpisodeDetailViewController(model: season)
+        let episodeDetailView = EpisodeDetailViewController(model: episode)
         
         // Hago un push de la vista detallada
-        // navigationController?.pushViewController(episodeDetailView, animated: true)
-        
-        // Aviso al delegado
-        // delegate?.episodeListViewController(self, didSelectEpisode: episode)
+        navigationController?.pushViewController(episodeDetailView, animated: true)
     }
     
 }

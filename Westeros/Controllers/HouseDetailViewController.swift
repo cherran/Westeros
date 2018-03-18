@@ -17,8 +17,10 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var sigilImageView: UIImageView!
     @IBOutlet weak var wordsLabel: UILabel!
     
+    
     // Mark: - Properties
     var model: House
+    
     
     // MARK: - Initialization
     init(model: House) {
@@ -87,7 +89,7 @@ class HouseDetailViewController: UIViewController {
 extension HouseDetailViewController: HouseListTableViewControllerDelegate {
     func houseListViewController(_ viewController: HouseListTableViewController, didSelectHouse house: House) {
         self.model = house
-        // self.title = house.name
+        self.title = house.name
         syncModelWithView()
     }
     

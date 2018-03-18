@@ -79,6 +79,7 @@ final class LocalFactory: HouseFactory {
 extension LocalFactory: SeasonFactory {
     var seasons: [Season] {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         dateFormatter.dateFormat = "MMMM d, y"
         
         let season1 = Season(name: "Season 1", airDate: dateFormatter.date(from: "April 17, 2011")!);

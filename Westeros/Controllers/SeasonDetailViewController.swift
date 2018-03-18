@@ -43,8 +43,8 @@ class SeasonDetailViewController: UIViewController {
     
     // MARK: - UI
     func setupUI() {
-        let seasons = UIBarButtonItem(title: "<Seasons", style: .plain, target: self, action: #selector(goBack))
-        navigationItem.leftBarButtonItem = seasons
+//        let seasons = UIBarButtonItem(title: "<Seasons", style: .plain, target: self, action: #selector(goBack))
+//        navigationItem.leftBarButtonItem = seasons
         
         EpisodesButton.setTitle("Detail", for: .normal)
         EpisodesButton.addTarget(self, action: #selector(displayEpisodes), for: .touchDown)
@@ -73,6 +73,7 @@ class SeasonDetailViewController: UIViewController {
         // fecha de emisión
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d, y"
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         let date = dateFormatter.string(from: model.airDate)
         FirstAiredLabel.text = "First Aired on \(date)"
         

@@ -19,8 +19,6 @@
 		282722C2204F4D090077A9A7 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282722C0204F4D090077A9A7 /* WikiViewController.xib */; };
 		282722C52050705F0077A9A7 /* HouseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282722C32050705F0077A9A7 /* HouseListTableViewController.swift */; };
 		282722C62050705F0077A9A7 /* HouseListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282722C42050705F0077A9A7 /* HouseListTableViewController.xib */; };
-		282722C92051D6090077A9A7 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282722C72051D6090077A9A7 /* MemberListViewController.swift */; };
-		282722CA2051D6090077A9A7 /* MemberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282722C82051D6090077A9A7 /* MemberListViewController.xib */; };
 		286F08B32059B83A006D9E25 /* SeasonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08B22059B83A006D9E25 /* SeasonTests.swift */; };
 		286F08B52059B9D6006D9E25 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08B42059B9D6006D9E25 /* Season.swift */; };
 		286F08B72059BE51006D9E25 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08B62059BE51006D9E25 /* Episode.swift */; };
@@ -33,6 +31,10 @@
 		286F08C5205B08BB006D9E25 /* EpisodeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F08C3205B08BB006D9E25 /* EpisodeListViewController.xib */; };
 		286F08C8205B0CD1006D9E25 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08C6205B0CD1006D9E25 /* EpisodeDetailViewController.swift */; };
 		286F08C9205B0CD1006D9E25 /* EpisodeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F08C7205B0CD1006D9E25 /* EpisodeDetailViewController.xib */; };
+		286F08CC205BF479006D9E25 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08CA205BF479006D9E25 /* MemberDetailViewController.swift */; };
+		286F08CD205BF479006D9E25 /* MemberDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F08CB205BF479006D9E25 /* MemberDetailViewController.xib */; };
+		286F08D0205C3020006D9E25 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08CE205C3020006D9E25 /* MemberListViewController.swift */; };
+		286F08D1205C3020006D9E25 /* MemberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F08CF205C3020006D9E25 /* MemberListViewController.xib */; };
 		28D30CA1203645C1004F1F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CA0203645C1004F1F82 /* AppDelegate.swift */; };
 		28D30CA8203645C1004F1F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA7203645C1004F1F82 /* Assets.xcassets */; };
 		28D30CAB203645C1004F1F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA9203645C1004F1F82 /* LaunchScreen.storyboard */; };
@@ -65,8 +67,6 @@
 		282722C0204F4D090077A9A7 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		282722C32050705F0077A9A7 /* HouseListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListTableViewController.swift; sourceTree = "<group>"; };
 		282722C42050705F0077A9A7 /* HouseListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseListTableViewController.xib; sourceTree = "<group>"; };
-		282722C72051D6090077A9A7 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
-		282722C82051D6090077A9A7 /* MemberListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberListViewController.xib; sourceTree = "<group>"; };
 		286F08B22059B83A006D9E25 /* SeasonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTests.swift; sourceTree = "<group>"; };
 		286F08B42059B9D6006D9E25 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		286F08B62059BE51006D9E25 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -79,6 +79,10 @@
 		286F08C3205B08BB006D9E25 /* EpisodeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListViewController.xib; sourceTree = "<group>"; };
 		286F08C6205B0CD1006D9E25 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		286F08C7205B0CD1006D9E25 /* EpisodeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailViewController.xib; sourceTree = "<group>"; };
+		286F08CA205BF479006D9E25 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		286F08CB205BF479006D9E25 /* MemberDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailViewController.xib; sourceTree = "<group>"; };
+		286F08CE205C3020006D9E25 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
+		286F08CF205C3020006D9E25 /* MemberListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberListViewController.xib; sourceTree = "<group>"; };
 		28D30C9D203645C1004F1F82 /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D30CA0203645C1004F1F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D30CA7203645C1004F1F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,8 +133,6 @@
 				282722C0204F4D090077A9A7 /* WikiViewController.xib */,
 				282722C32050705F0077A9A7 /* HouseListTableViewController.swift */,
 				282722C42050705F0077A9A7 /* HouseListTableViewController.xib */,
-				282722C72051D6090077A9A7 /* MemberListViewController.swift */,
-				282722C82051D6090077A9A7 /* MemberListViewController.xib */,
 				286F08BA2059E61C006D9E25 /* SeasonListViewController.swift */,
 				286F08BB2059E61C006D9E25 /* SeasonListViewController.xib */,
 				286F08BE205AE390006D9E25 /* SeasonDetailViewController.swift */,
@@ -139,6 +141,10 @@
 				286F08C3205B08BB006D9E25 /* EpisodeListViewController.xib */,
 				286F08C6205B0CD1006D9E25 /* EpisodeDetailViewController.swift */,
 				286F08C7205B0CD1006D9E25 /* EpisodeDetailViewController.xib */,
+				286F08CA205BF479006D9E25 /* MemberDetailViewController.swift */,
+				286F08CB205BF479006D9E25 /* MemberDetailViewController.xib */,
+				286F08CE205C3020006D9E25 /* MemberListViewController.swift */,
+				286F08CF205C3020006D9E25 /* MemberListViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,14 +303,15 @@
 				286F08C1205AE390006D9E25 /* SeasonDetailViewController.xib in Resources */,
 				282722C2204F4D090077A9A7 /* WikiViewController.xib in Resources */,
 				2809FABD2049F4D800C1A8FD /* targaryenSmall.jpg in Resources */,
-				282722CA2051D6090077A9A7 /* MemberListViewController.xib in Resources */,
 				286F08C5205B08BB006D9E25 /* EpisodeListViewController.xib in Resources */,
+				286F08D1205C3020006D9E25 /* MemberListViewController.xib in Resources */,
 				286F08BD2059E61C006D9E25 /* SeasonListViewController.xib in Resources */,
 				2809FAC22049F98800C1A8FD /* HouseDetailViewController.xib in Resources */,
 				2809FABB2049F4D800C1A8FD /* codeIsComing.png in Resources */,
 				286F08C9205B0CD1006D9E25 /* EpisodeDetailViewController.xib in Resources */,
 				28D30CAB203645C1004F1F82 /* LaunchScreen.storyboard in Resources */,
 				28D30CA8203645C1004F1F82 /* Assets.xcassets in Resources */,
+				286F08CD205BF479006D9E25 /* MemberDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,11 +339,12 @@
 				286F08B72059BE51006D9E25 /* Episode.swift in Sources */,
 				286F08C4205B08BB006D9E25 /* EpisodeListViewController.swift in Sources */,
 				282722C52050705F0077A9A7 /* HouseListTableViewController.swift in Sources */,
+				286F08CC205BF479006D9E25 /* MemberDetailViewController.swift in Sources */,
 				286F08C8205B0CD1006D9E25 /* EpisodeDetailViewController.swift in Sources */,
+				286F08D0205C3020006D9E25 /* MemberListViewController.swift in Sources */,
 				28D30CA1203645C1004F1F82 /* AppDelegate.swift in Sources */,
 				2809FACC204DDDF100C1A8FD /* Repository.swift in Sources */,
 				282722C1204F4D090077A9A7 /* WikiViewController.swift in Sources */,
-				282722C92051D6090077A9A7 /* MemberListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +494,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AU6SH5698;
 				INFOPLIST_FILE = Westeros/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.Westeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,7 +510,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AU6SH5698;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = Westeros/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.Westeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +528,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AU6SH5698;
 				INFOPLIST_FILE = WesterosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.WesterosTests;
@@ -531,6 +545,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AU6SH5698;
 				INFOPLIST_FILE = WesterosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.WesterosTests;

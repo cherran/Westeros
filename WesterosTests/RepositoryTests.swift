@@ -30,34 +30,54 @@ class RepositoryTests: XCTestCase {
         XCTAssertNotNil(local)
     }
     
+    
+    // MARK: - Houses
     func testLocalRepositoryHousesCreation() {
         XCTAssertNotNil(localHouses)
         XCTAssertEqual(localHouses.count, 3)
-    }
-    
-    func testLocalRepositorySeasonsCreation() {
-        XCTAssertNotNil(localSeasons)
-        XCTAssertEqual(localSeasons.count, 7)
     }
     
     func testLocalRepositoryReturnsHouseSortedArrayOfHouses() {
         XCTAssertEqual(localHouses, localHouses.sorted())
     }
     
-    func testLocalRepositoryReturnsSeasonSortedArrayOfHouses() {
-        XCTAssertEqual(localSeasons, localSeasons.sorted())
-    }
-    
     func testLocalRepositoryReturnsHouseByName() {
-        let stark = Repository.local.season(named: "seASOn 1")
-        XCTAssertEqual(stark?.name, "Season 1")
+        let stark = Repository.local.house(named: "sTArK")
+        XCTAssertEqual(stark?.name, "Stark")
         
-        let keepcoding = Repository.local.season(named: "stark")
-        XCTAssertNil(keepcoding)
+        let keepcoding = Repository.local.house(named: "keepcoding")
+        XCTAssertNil(season2)
     }
     
     func testHouseFiltering() {
         let filtered = Repository.local.seasons(filteredBy: { $0.count == 2 }) // Sintaxis de clausura
+        XCTAssertEqual(filtered.count, 7)
+        
+        let otherFilter = Repository.local.seasons(filteredBy: { $0.name.contains("7") })
+        XCTAssertEqual(otherFilter.count, 1)
+    }
+    
+    
+    // MARK: - Seasons
+    func testLocalRepositorySeasonsCreation() {
+        XCTAssertNotNil(localSeasons)
+        XCTAssertEqual(localSeasons.count, 7)
+    }
+    
+    func testLocalRepositoryReturnsSeasonSortedArrayOfSeasons() {
+        XCTAssertEqual(localSeasons, localSeasons.sorted())
+    }
+    
+    func testLocalRepositoryReturnsSeasonByName() {
+        let season1 = Repository.local.season(named: "seASOn 1")
+        XCTAssertEqual(season1?.name, "Season 1")
+        
+        let season2 = Repository.local.season(named: "stark")
+        XCTAssertNil(season2)
+    }
+    
+    func testSeasonFiltering() {
+        let filter = Repository.local.seasons(filteredBy: { $0.count == 2 }) // Sintaxis de clausura
         XCTAssertEqual(filtered.count, 7)
         
         let otherFilter = Repository.local.seasons(filteredBy: { $0.name.contains("7") })

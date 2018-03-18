@@ -90,6 +90,7 @@ extension Season: Comparable {
 extension Season: CustomStringConvertible {
     var description: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         dateFormatter.dateFormat = "MMMM d, y"
         
         let date = dateFormatter.string(from: airDate)

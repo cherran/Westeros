@@ -8,6 +8,9 @@
 
 import UIKit
 
+let SEASON_DID_CHANGE_NOTIFICATION_NAME = "SeasonDidChange"
+let SEASON_KEY = "SeasonKey"
+
 // MARK: - SeasonListViewControllerDelegate
 protocol SeasonListViewControllerDelegate: class {
     func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason: Season)
@@ -63,6 +66,7 @@ class SeasonListViewController: UITableViewController {
         
         // Texto detallado (fecha de emisión)
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         dateFormatter.dateFormat = "MMMM d, y"
         let date = dateFormatter.string(from: season.airDate)
         cell?.detailTextLabel?.text = "First Aired: \(date)"
@@ -75,14 +79,40 @@ class SeasonListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let season = model[indexPath.row]
         
-        // Creo la vista detallada
-        let seasonDetailView = SeasonDetailViewController(model: season)
-        
-        // Hago un push de la vista detallada
-        navigationController?.pushViewController(seasonDetailView, animated: true)
         
         // Aviso al delegado
-        // delegate?.seasonListViewController(self, didSelectSeason: season)
+        delegate?.seasonListViewController(self, didSelectSeason: season)
+        
+        // Mando la misma info a través de notificaciones
+        let notificationCenter = NotificationCenter.default
+        let notification = Notification(name: Notification.Name(SEASON_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [SEASON_KEY : season])
+        
+        notificationCenter.post(notification)
+        
+        
+//        switch UIDevice.current.userInterfaceIdiom {
+//        case .phone:
+//            // Creo la vista detallada
+//            let seasonDetailView = SeasonDetailViewController(model: season)
+//            
+//            // Hago un push de la vista detallada
+//            navigationController?.pushViewController(seasonDetailView, animated: true)
+//            
+//        case .pad:
+//            if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
+//                // Creo la vista detallada
+//                let seasonDetailView = SeasonDetailViewController(model: season)
+//                
+//                // Hago un push de la vista detallada
+//                navigationController?.pushViewController(seasonDetailView, animated: true)
+//                
+//            } else {
+//                // Aviso al delegado
+//                delegate?.seasonListViewController(self, didSelectSeason: season)
+//            }
+//        default:
+//            return
+//        }
     }
     
     

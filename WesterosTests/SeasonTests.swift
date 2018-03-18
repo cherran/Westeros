@@ -84,3 +84,4 @@ class SeasonTests: XCTestCase {
         XCTAssertNotNil(season3.description)
     }
 }
+
