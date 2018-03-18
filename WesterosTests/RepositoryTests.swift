@@ -46,7 +46,15 @@ class RepositoryTests: XCTestCase {
         XCTAssertEqual(stark?.name, "Stark")
         
         let keepcoding = Repository.local.house(named: "keepcoding")
-        XCTAssertNil(season2)
+        XCTAssertNil(keepcoding)
+    }
+    
+    func testLocalRepositoryReturnsHouseByNameTypeSafe() {
+        let stark = Repository.local.house(named: HouseNames.stark)
+        XCTAssertEqual(stark?.name, "Stark")
+        
+        let tyrell = Repository.local.house(named: HouseNames.tyrell)
+        XCTAssertNil(tyrell)
     }
     
     func testHouseFiltering() {
@@ -77,7 +85,7 @@ class RepositoryTests: XCTestCase {
     }
     
     func testSeasonFiltering() {
-        let filter = Repository.local.seasons(filteredBy: { $0.count == 2 }) // Sintaxis de clausura
+        let filtered = Repository.local.seasons(filteredBy: { $0.count == 2 }) // Sintaxis de clausura
         XCTAssertEqual(filtered.count, 7)
         
         let otherFilter = Repository.local.seasons(filteredBy: { $0.name.contains("7") })

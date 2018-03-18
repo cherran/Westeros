@@ -72,6 +72,15 @@ final class LocalFactory: HouseFactory {
         return houses.filter(filteredBy)
     }
     
+    
+    //Crea una función house(:named) , similar a la que acepta un String , pero que sea type safe y funcione el autocompletado.
+    //¿Se te ocurre qué tipo de datos podemos utilizar? Haz el test correspondiente.
+    // ENUM --> HouseNames
+    func house(named name: HouseNames) -> House? {
+        let house = houses.filter{ $0.name.uppercased() == name.rawValue.uppercased() }.first // .first --> el primero que cumpla estos parámetros
+        return house
+    }
+    
 }
 
 
@@ -135,7 +144,17 @@ extension LocalFactory: SeasonFactory {
 
 
 
-
+enum HouseNames: String {
+    case stark = "Stark"
+    case lannister = "Lannister"
+    case targaryen = "Targaryen"
+    case arryn = "Arryn"
+    case tully = "Tully"
+    case greyjoy = "Greyjoy"
+    case baratheon = "Baratheon"
+    case tyrell = "Tyrell"
+    case martell = "Martell"
+}
 
 
 
