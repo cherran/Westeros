@@ -49,7 +49,6 @@ class HouseListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     // Para conformarse al protocolo UITableViewDataSource
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // return the number of sections
         return 1
@@ -89,13 +88,6 @@ class HouseListTableViewController: UITableViewController {
         // Averiguar qué casa han pulsado
         let house = model[indexPath.row]
         
-        // Crear un controlador de detalle de esa casa
-//        let houseDetailViewController = HouseDetailViewController(model: house)
-//
-//        // Hacer un push
-//        navigationController?.pushViewController(houseDetailViewController, animated: true)
-        
-        
         // Avisamos al delegado
         delegate?.houseListViewController(self, didSelectHouse: house)
         
@@ -131,6 +123,15 @@ extension HouseListTableViewController {
 }
 
 
+// Para el caso del Iphone (navigation y no splitview)
+extension HouseListTableViewController: HouseListTableViewControllerDelegate {
+    func houseListViewController(_ viewController: HouseListTableViewController, didSelectHouse house: House) {
+        // Crear un controlador de detalle de esa casa
+        let houseDetailViewController = HouseDetailViewController(model: house)
+        // Hacer un push
+        navigationController?.pushViewController(houseDetailViewController, animated: true)
+    }
+}
 
 
 

@@ -37,6 +37,7 @@
 		286F08E7205EA20F006D9E25 /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08E2205EA20E006D9E25 /* HouseTests.swift */; };
 		286F08E8205EA20F006D9E25 /* EpisodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08E3205EA20E006D9E25 /* EpisodeTests.swift */; };
 		286F08E9205EA20F006D9E25 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F08E4205EA20F006D9E25 /* RepositoryTests.swift */; };
+		286F08EB20605224006D9E25 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 286F08EA20605224006D9E25 /* characters.json */; };
 		28D30CA1203645C1004F1F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D30CA0203645C1004F1F82 /* AppDelegate.swift */; };
 		28D30CA8203645C1004F1F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA7203645C1004F1F82 /* Assets.xcassets */; };
 		28D30CAB203645C1004F1F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D30CA9203645C1004F1F82 /* LaunchScreen.storyboard */; };
@@ -87,6 +88,7 @@
 		286F08E2205EA20E006D9E25 /* HouseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTests.swift; sourceTree = "<group>"; };
 		286F08E3205EA20E006D9E25 /* EpisodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTests.swift; sourceTree = "<group>"; };
 		286F08E4205EA20F006D9E25 /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		286F08EA20605224006D9E25 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		28D30C9D203645C1004F1F82 /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D30CA0203645C1004F1F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D30CA7203645C1004F1F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		2809FABE2049F51500C1A8FD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				286F08EA20605224006D9E25 /* characters.json */,
 				2809FAB82049F4D800C1A8FD /* codeIsComing.png */,
 				2809FAB92049F4D800C1A8FD /* lannister.jpg */,
 				2809FABA2049F4D800C1A8FD /* targaryenSmall.jpg */,
@@ -308,6 +311,7 @@
 				282722C62050705F0077A9A7 /* HouseListTableViewController.xib in Resources */,
 				2809FABC2049F4D800C1A8FD /* lannister.jpg in Resources */,
 				286F08C1205AE390006D9E25 /* SeasonDetailViewController.xib in Resources */,
+				286F08EB20605224006D9E25 /* characters.json in Resources */,
 				282722C2204F4D090077A9A7 /* WikiViewController.xib in Resources */,
 				2809FABD2049F4D800C1A8FD /* targaryenSmall.jpg in Resources */,
 				286F08C5205B08BB006D9E25 /* EpisodeListViewController.xib in Resources */,
@@ -389,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AU6SH5698;
 				INFOPLIST_FILE = WesterosTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.WesterosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AU6SH5698;
 				INFOPLIST_FILE = WesterosTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.WesterosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -528,7 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AU6SH5698;
 				INFOPLIST_FILE = Westeros/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.Westeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -545,7 +551,7 @@
 				DEVELOPMENT_TEAM = 7AU6SH5698;
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = Westeros/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cherran.Westeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -12,8 +12,8 @@ import WebKit
 class WikiViewController: UIViewController {
     
     // Mark: - Outlets
-    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var webView: WKWebView!
     
     // Mark: - Properties
     var model: House

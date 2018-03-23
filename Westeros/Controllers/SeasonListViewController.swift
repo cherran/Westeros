@@ -88,36 +88,19 @@ class SeasonListViewController: UITableViewController {
         let notification = Notification(name: Notification.Name(SEASON_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [SEASON_KEY : season])
         
         notificationCenter.post(notification)
-        
-        
-//        switch UIDevice.current.userInterfaceIdiom {
-//        case .phone:
-//            // Creo la vista detallada
-//            let seasonDetailView = SeasonDetailViewController(model: season)
-//            
-//            // Hago un push de la vista detallada
-//            navigationController?.pushViewController(seasonDetailView, animated: true)
-//            
-//        case .pad:
-//            if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
-//                // Creo la vista detallada
-//                let seasonDetailView = SeasonDetailViewController(model: season)
-//                
-//                // Hago un push de la vista detallada
-//                navigationController?.pushViewController(seasonDetailView, animated: true)
-//                
-//            } else {
-//                // Aviso al delegado
-//                delegate?.seasonListViewController(self, didSelectSeason: season)
-//            }
-//        default:
-//            return
-//        }
     }
-    
-    
 }
 
+
+// Para el caso del Iphone (navigation y no splitview)
+extension SeasonListViewController: SeasonListViewControllerDelegate {
+    func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason season: Season) {
+        // Crear un controlador de detalle de esa casa
+        let seasonDetailViewController = SeasonDetailViewController(model: season)
+        // Hacer un push
+        navigationController?.pushViewController(seasonDetailViewController, animated: true)
+    }
+}
 
 
 

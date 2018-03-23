@@ -50,12 +50,12 @@ final class LocalFactory: HouseFactory {
         
         
         // Add characters to houses
-        starkHouse.add(person: arya)
-        starkHouse.add(person: robb)
-        lannisterHouse.add(person: tyrion)
-        lannisterHouse.add(person: cersei)
-        lannisterHouse.add(person: jaime)
-        targaryenHouse.add(person: dani)
+//        starkHouse.add(person: arya)
+//        starkHouse.add(person: robb)
+//        lannisterHouse.add(person: tyrion)
+//        lannisterHouse.add(person: cersei)
+//        lannisterHouse.add(person: jaime)
+//        targaryenHouse.add(person: dani)
         
         
         return [starkHouse, lannisterHouse, targaryenHouse].sorted()

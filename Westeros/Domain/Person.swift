@@ -27,6 +27,9 @@ final class Person {
         self.name = name
         _alias = alias
         self.house = house
+        
+        // Pregunta 11 (opcional)
+        house.add(person: self)
     }
     
     // init sin alias (init de conveniecia)
